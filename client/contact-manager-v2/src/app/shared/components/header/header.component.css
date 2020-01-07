@@ -1,0 +1,22 @@
+.example-icon {
+    padding: 0 14px;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  .example-button-row button,
+.example-button-row a {
+  margin-right: 11px;
+}
+.router-link-active {
+  color: green;
+  font-weight: bold;
+}
+.mat-elevation-z24{
+  position: relative;
+  z-index: 2;
+}
+mat-toolbar {
+  position: relative;
+}

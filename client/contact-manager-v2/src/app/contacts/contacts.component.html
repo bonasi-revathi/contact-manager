@@ -1,0 +1,31 @@
+<mat-toolbar color="primary">
+<mat-toolbar-row>
+    <span><h2>Contacts</h2></span>
+    <span class="example-spacer"></span>
+    <div class="example-button-row">
+        <a mat-raised-button routerLink="/contacts/add-contact" color="primary"><mat-icon> person_add</mat-icon>&nbsp;&nbsp;Add Contact</a>
+        <a mat-raised-button routerLink="#" color="primary"><mat-icon> menu_book</mat-icon>&nbsp;&nbsp;Show Contacts</a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="container">
+  <mat-grid-list cols="3" rowHeight="2:2">
+      <mat-grid-tile *ngFor="let contact of contactList ">
+          <mat-card class="example-card">
+              <mat-card-title>{{contact.name}}</mat-card-title>
+              <mat-card-subtitle>{{contact.phone}}</mat-card-subtitle>
+              <mat-card-content>
+                  <p>
+                      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                      bred for hunting.
+                  </p>
+              </mat-card-content>
+              <mat-card-actions>
+                  <a mat-button routerLink="/contacts/{{contact.contactId}}">VIEW DETAILS</a>
+              </mat-card-actions>
+          </mat-card>
+      </mat-grid-tile>
+  </mat-grid-list>
+
+</div>

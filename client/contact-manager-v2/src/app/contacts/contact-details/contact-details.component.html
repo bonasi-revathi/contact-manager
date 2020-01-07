@@ -1,0 +1,33 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span *ngIf="contactData"><a mat-raised-button routerLink="/contacts" color="primary">
+        <mat-icon> reply</mat-icon>&nbsp;&nbsp;Back
+      </a>&nbsp;&nbsp;{{contactData.name}}</span>
+    <span class="example-spacer"></span>
+    <div class="example-button-row">
+      <a mat-raised-button routerLink="/contacts/new" color="primary">
+        <mat-icon> person_add</mat-icon>&nbsp;&nbsp;Add Contact
+      </a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="container">
+
+  <mat-grid-list cols="1" rowHeight="4:1">
+    <mat-grid-tile  *ngFor="let c of contactData">
+      <mat-card class="detail-card">
+        <mat-card-title>{{c.name}}</mat-card-title>
+        <mat-card-subtitle>{{c.email}}</mat-card-subtitle>
+        <mat-card-content>
+          <p>{{c.phone}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" (click)="openDialog()"><mat-icon> edit</mat-icon>&nbsp;&nbsp;Edit</button>
+          <button mat-raised-button  (click)="openDeleteDialog()">Delete</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+</div>

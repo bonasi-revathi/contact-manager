@@ -1,0 +1,24 @@
+
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+.example-button-row button,
+.example-button-row a {
+margin-right: 11px;
+}
+mat-grid-tile {
+  background: white;
+  width:max-content;
+}
+.example-card {
+  max-width: 1000px;
+}
+
+.example-header-image {
+  background-image: url('https://cdn.auth0.com/blog/illustrations/angular.png');
+  background-size: cover;
+}

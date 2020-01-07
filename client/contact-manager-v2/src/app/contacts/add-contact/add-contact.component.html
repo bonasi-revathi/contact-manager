@@ -1,0 +1,51 @@
+<mat-toolbar color="primary" class="contactnav">
+    <mat-toolbar-row>
+        <span><a mat-raised-button routerLink="/contacts" color="primary">
+                <mat-icon> reply</mat-icon>&nbsp;&nbsp;Back
+            </a>&nbsp;&nbsp;Add New Contact</span>
+        <span class="example-spacer"></span>
+        <div class="example-button-row">
+            <a mat-raised-button routerLink="/contacts/allcontacts" color="primary">
+                <mat-icon> menu_book</mat-icon>&nbsp;&nbsp;Show Contacts
+            </a>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+
+<div class="example-container">
+    <form class="contact-form" [formGroup]="contactForm">
+        <span *ngIf="isSaved==1;else notSaved" class="alert_success">{{message}}</span>
+        <ng-template #notSaved>
+            <span class="alert_failure">{{message}}</span>
+        </ng-template>
+        <mat-form-field class="contact-fields-full-width">
+            <input matInput placeholder="Contact Name" formControlName="name" required>
+            <mat-error>*Contact Name is require</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="contact-fields-full-width">
+            <input matInput placeholder="Email" formControlName="email" required>
+            <mat-error>*Email is require</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="contact-fields-full-width">
+            <span matPrefix>+91 &nbsp;</span>
+            <input type="tel" matInput placeholder="Phone Number" formControlName="phone" required>
+            <mat-error>*Phonenumber is require</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="contact-fields-full-width">
+            <input matInput placeholder="Address" formControlName="address" required>
+            <mat-error>*Address is require</mat-error>
+        </mat-form-field>
+        <mat-grid-list cols="2" rowHeight="6:1">
+
+            <mat-grid-tile><button mat-raised-button color="primary" (click)="onCreateContact()">
+                    <mat-icon>add_to_queue </mat-icon>&nbsp;&nbsp;Save Contact
+                </button>&nbsp;&nbsp;<button type="reset" mat-raised-button color="accent">
+                    <mat-icon>layers_clear </mat-icon>&nbsp;&nbsp;Clear
+                </button></mat-grid-tile>
+        </mat-grid-list>
+    </form>
+</div>
